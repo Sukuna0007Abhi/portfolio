@@ -383,8 +383,10 @@
                 if (isValid) {
                     errorElement.textContent = '';
                     field.classList.remove('error');
+                    field.parentNode.classList.remove('has-error');
                 } else {
                     field.classList.add('error');
+                    field.parentNode.classList.add('has-error');
                 }
 
                 return isValid;
@@ -475,6 +477,11 @@
 
     <style>
         /* Page-specific styles */
+        :root {
+            --error-color: #ef4444;
+            --success-color: #10b981;
+        }
+        
         .contact-section {
             padding: 6rem 0;
         }
@@ -632,6 +639,11 @@
             color: var(--error-color);
             font-size: 0.875rem;
             margin-top: 0.5rem;
+            display: none; /* Hidden by default */
+            min-height: 1.25rem;
+        }
+
+        .form-group.has-error .error-message {
             display: block;
         }
 
