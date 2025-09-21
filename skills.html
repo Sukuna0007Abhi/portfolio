@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical Skills - Abhijit Das specializes in Python, Go, Ruby, JavaScript, Kubernetes, and Cloud Technologies">
+    <title>Skills — Abhijit Das</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav glow-border">
+        <div class="nav-content">
+            <div class="nav-logo">Abhijit Das</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i data-feather="sun"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content reveal">
+                <h1 class="page-title color-shift">Skills & Technologies</h1>
+                <p class="page-subtitle">Comprehensive overview of my <span class="highlight-word">technical expertise</span> and <span class="highlight-word">proficiency levels</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Cloud -->
+    <section class="skills-cloud-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="color-shift-slow">Interactive Skills Cloud</h2>
+                <p>Hover over any skill to see details and <span class="highlight-word">proficiency level</span></p>
+            </div>
+            
+            <div class="skills-cloud reveal" id="skillsCloud">
+                <!-- Primary Languages -->
+                <div class="skill-item primary" data-category="languages" data-level="95" data-description="Advanced Go programming, microservices architecture, concurrent systems">
+                    <span class="skill-name highlight-word">Go</span>
+                    <div class="skill-tooltip">
+                        <h4>Go Programming</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                        <p>Advanced Go programming, microservices architecture, concurrent systems</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item primary" data-category="languages" data-level="88" data-description="Backend development, DevOps automation, data analysis">
+                    <span class="skill-name highlight-word">Python</span>
+                    <div class="skill-tooltip">
+                        <h4>Python</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                        <p>Backend development, DevOps automation, data analysis</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item primary" data-category="languages" data-level="85" data-description="Full-stack development, Node.js, React, modern ES6+">
+                    <span class="skill-name highlight-word">JavaScript</span>
+                    <div class="skill-tooltip">
+                        <h4>JavaScript</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <p>Full-stack development, Node.js, React, modern ES6+</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item primary" data-category="languages" data-level="80" data-description="Web applications, scripting, developer tooling">
+                    <span class="skill-name">Ruby</span>
+                    <div class="skill-tooltip">
+                        <h4>Ruby</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <p>Web applications, scripting, developer tooling</p>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-item secondary" data-category="cloud" data-level="92" data-description="CKAD certified - Container orchestration and application deployment">
+                    <span class="skill-name">Kubernetes</span>
+                    <div class="skill-tooltip">
+                        <h4>Kubernetes</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 92%;"></div>
+                        </div>
+                        <p>CKAD certified - Container orchestration and application deployment</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item secondary" data-category="cloud" data-level="88" data-description="Solutions Architect Associate certified - EC2, Lambda, RDS, S3">
+                    <span class="skill-name">AWS</span>
+                    <div class="skill-tooltip">
+                        <h4>AWS</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                        <p>Solutions Architect Associate certified - EC2, Lambda, RDS, S3</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item secondary" data-category="cloud" data-level="85" data-description="Security Specialist certified - Infrastructure and security services">
+                    <span class="skill-name">Oracle Cloud</span>
+                    <div class="skill-tooltip">
+                        <h4>Oracle Cloud</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <p>Security Specialist certified - Infrastructure and security services</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item secondary" data-category="devops" data-level="85" data-description="Containerization, multi-stage builds, optimization">
+                    <span class="skill-name">Docker</span>
+                    <div class="skill-tooltip">
+                        <h4>Docker</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <p>Containerization, multi-stage builds, optimization</p>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Tools -->
+                <div class="skill-item tertiary" data-category="frameworks" data-level="82" data-description="Backend APIs, web frameworks, ORM">
+                    <span class="skill-name">Django</span>
+                    <div class="skill-tooltip">
+                        <h4>Django</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 82%;"></div>
+                        </div>
+                        <p>Backend APIs, web frameworks, ORM</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item tertiary" data-category="frameworks" data-level="80" data-description="RESTful APIs, microservices, web development">
+                    <span class="skill-name">FastAPI</span>
+                    <div class="skill-tooltip">
+                        <h4>FastAPI</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <p>RESTful APIs, microservices, web development</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item tertiary" data-category="frameworks" data-level="78" data-description="Server-side applications, concurrent programming">
+                    <span class="skill-name">Node.js</span>
+                    <div class="skill-tooltip">
+                        <h4>Node.js</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 78%;"></div>
+                        </div>
+                        <p>Server-side applications, concurrent programming</p>
+                    </div>
+                    </div>
+                
+                <div class="skill-item tertiary" data-category="frameworks" data-level="75" data-description="Frontend development, component-based architecture">
+                    <span class="skill-name">React</span>
+                    <div class="skill-tooltip">
+                        <h4>React</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                        <p>Frontend development, component-based architecture</p>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-item database" data-category="databases" data-level="80" data-description="Relational database design, complex queries, optimization">
+                    <span class="skill-name">PostgreSQL</span>
+                    <div class="skill-tooltip">
+                        <h4>PostgreSQL</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <p>Relational database design, complex queries, optimization</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item database" data-category="databases" data-level="75" data-description="NoSQL databases, document storage, aggregation pipelines">
+                    <span class="skill-name">MongoDB</span>
+                    <div class="skill-tooltip">
+                        <h4>MongoDB</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                        <p>NoSQL databases, document storage, aggregation pipelines</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item database" data-category="databases" data-level="78" data-description="In-memory caching, session storage, performance optimization">
+                    <span class="skill-name">Redis</span>
+                    <div class="skill-tooltip">
+                        <h4>Redis</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 78%;"></div>
+                        </div>
+                        <p>In-memory caching, session storage, performance optimization</p>
+                    </div>
+                </div>
+
+                <!-- Specialized Skills -->
+                <div class="skill-item special" data-category="specialized" data-level="85" data-description="Natural Language Processing, sentiment analysis, text mining">
+                    <span class="skill-name">NLP</span>
+                    <div class="skill-tooltip">
+                        <h4>NLP</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <p>Natural Language Processing, sentiment analysis, text mining</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item special" data-category="specialized" data-level="80" data-description="Data extraction, web crawling, automation">
+                    <span class="skill-name">Web Scraping</span>
+                    <div class="skill-tooltip">
+                        <h4>Web Scraping</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <p>Data extraction, web crawling, automation</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item special" data-category="specialized" data-level="75" data-description="Instruction set architecture, decoder generation, RISC-V">
+                    <span class="skill-name">ISA Tooling</span>
+                    <div class="skill-tooltip">
+                        <h4>ISA Tooling</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                        <p>Instruction set architecture, decoder generation, RISC-V</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item special" data-category="specialized" data-level="72" data-description="Smart contracts, DeFi, blockchain development">
+                    <span class="skill-name">Blockchain</span>
+                    <div class="skill-tooltip">
+                        <h4>Blockchain</h4>
+                        <div class="skill-level-bar">
+                            <div class="skill-progress" style="width: 72%;"></div>
+                        </div>
+                        <p>Smart contracts, DeFi, blockchain development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill Categories -->
+    <section class="skill-categories">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Skill Categories</h2>
+                <p>Organized by expertise areas with detailed proficiency levels</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Programming Languages -->
+                <div class="category-card glass card-3d glow-border reveal">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-feather="code"></i>
+                        </div>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="88"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Go</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Ruby</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="category-card glass card-3d reveal">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-feather="cloud"></i>
+                        </div>
+                        <h3>Cloud & DevOps</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Kubernetes (CKAD)</span>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="92"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">AWS</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="88"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Oracle Cloud</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="category-card glass card-3d reveal">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-feather="layers"></i>
+                        </div>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Django</span>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="82"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">FastAPI</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="80"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="78"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">React</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="category-card glass card-3d reveal">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-feather="database"></i>
+                        </div>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">PostgreSQL</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="80"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Redis</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="78"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="75"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-percentage">72%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="72"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="category-card glass card-3d reveal">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-feather="tool"></i>
+                        </div>
+                        <h3>Tools & Technologies</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Git/GitHub</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Linux/Unix</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Terraform</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="75"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">CI/CD</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialized Areas -->
+                <div class="category-card glass card-3d reveal">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i data-feather="zap"></i>
+                        </div>
+                        <h3>Specialized Areas</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Distributed Systems</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="88"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">NLP & ML</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">Web Scraping</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="80"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-detailed">
+                            <div class="skill-info">
+                                <span class="skill-name">System Architecture</span>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-percentage="82"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="learning-path">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Current Learning Path</h2>
+                <p>Technologies and areas I'm actively exploring and improving</p>
+            </div>
+            
+            <div class="learning-grid reveal">
+                <div class="learning-item glass">
+                    <div class="learning-icon">
+                        <i data-feather="trending-up"></i>
+                    </div>
+                    <h3>Advanced Kubernetes</h3>
+                    <p>Deepening expertise in cluster administration, custom operators, and multi-cluster management.</p>
+                    <div class="learning-progress">
+                        <div class="progress">
+                            <div class="progress-bar" data-percentage="60"></div>
+                        </div>
+                        <span>60% Complete</span>
+                    </div>
+                </div>
+                
+                <div class="learning-item glass">
+                    <div class="learning-icon">
+                        <i data-feather="brain"></i>
+                    </div>
+                    <h3>Machine Learning Engineering</h3>
+                    <p>Expanding knowledge in MLOps, model deployment, and production ML systems.</p>
+                    <div class="learning-progress">
+                        <div class="progress">
+                            <div class="progress-bar" data-percentage="45"></div>
+                        </div>
+                        <span>45% Complete</span>
+                    </div>
+                </div>
+                
+                <div class="learning-item glass">
+                    <div class="learning-icon">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <h3>Security & Compliance</h3>
+                    <p>Security-first development, compliance frameworks, and secure coding practices.</p>
+                    <div class="learning-progress">
+                        <div class="progress">
+                            <div class="progress-bar" data-percentage="70"></div>
+                        </div>
+                        <span>70% Complete</span>
+                    </div>
+                </div>
+                
+                <div class="learning-item glass">
+                    <div class="learning-icon">
+                        <i data-feather="git-commit"></i>
+                    </div>
+                    <h3>System Design</h3>
+                    <p>Large-scale system architecture, performance optimization, and scalability patterns.</p>
+                    <div class="learning-progress">
+                        <div class="progress">
+                            <div class="progress-bar" data-percentage="55"></div>
+                        </div>
+                        <span>55% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content glass glow-border reveal">
+                <h2>Let's Build Something Together</h2>
+                <p>Ready to leverage these skills for your next project? I'm available for collaborations, consulting, and full-time opportunities.</p>
+                <div class="cta-actions">
+                    <a href="projects.html" class="btn btn-primary">
+                        <i data-feather="folder"></i>
+                        See My Work
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i data-feather="message-circle"></i>
+                        Start a Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content reveal">
+                <div class="footer-left">
+                    <div class="footer-logo">Abhijit Das</div>
+                    <p>Cloud-Native Engineer & Open Source Advocate</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/Sukuna0007Abhi" target="_blank" aria-label="GitHub">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhijit-das-02098035b" target="_blank" aria-label="LinkedIn">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="mailto:appsonly310@gmail.com" aria-label="Email">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="skills.html">Skills</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="achievements.html">Achievements</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Pi5TpYjHZKrwQGRTqLbt-xLkLgY-bA8m/view?usp=sharing" target="_blank" class="download-resume">Resume</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijit Das. Built with passion for open source and innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/main.js"></script>
+    <script>
+        feather.replace();
+        
+        // Enhanced skills cloud interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillItems = document.querySelectorAll('.skills-cloud .skill-item');
+            
+            skillItems.forEach((item, index) => {
+                // Add floating animation with staggered delays
+                item.style.setProperty('--float-delay', `${index * 0.1}s`);
+                
+                // Enhanced hover effects
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.15) translateY(-8px)';
+                    this.style.zIndex = '10';
+                    
+                    // Add ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.classList.add('skill-ripple');
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        if (ripple.parentNode) {
+                            ripple.remove();
+                        }
+                    }, 600);
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.zIndex = '';
+                });
+                
+                // Add random movement
+                setInterval(() => {
+                    if (!item.matches(':hover')) {
+                        const randomX = (Math.random() - 0.5) * 10;
+                        const randomY = (Math.random() - 0.5) * 10;
+                        item.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                        
+                        setTimeout(() => {
+                            if (!item.matches(':hover')) {
+                                item.style.transform = '';
+                            }
+                        }, 2000);
+                    }
+                }, 3000 + Math.random() * 2000);
+            });
+        });
+    </script>
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(ellipse 600px 400px at 50% 0%, rgba(124, 58, 237, 0.06), transparent);
+        }
+
+        .page-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .skills-cloud-section {
+            padding: 6rem 0;
+            overflow: hidden;
+        }
+
+        .skills-cloud {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .skill-item {
+            position: relative;
+            background: var(--glass-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            padding: 1rem 2rem;
+            backdrop-filter: blur(20px);
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+            user-select: none;
+            animation: float 6s ease-in-out infinite;
+            animation-delay: var(--float-delay, 0s);
+        }
+
+        .skill-item.primary {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 1.25rem 2.5rem;
+        }
+
+        .skill-item.secondary {
+            background: var(--gradient-secondary);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+        }
+
+        .skill-item.tertiary {
+            background: var(--glass-secondary);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .skill-item.database {
+            background: linear-gradient(135deg, var(--accent-quaternary), var(--accent-pink));
+            color: white;
+            font-weight: 600;
+        }
+
+        .skill-item.special {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-yellow));
+            color: var(--bg-primary);
+            font-weight: 700;
+        }
+
+        .skill-item:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-tooltip {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass-strong);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            min-width: 200px;
+            backdrop-filter: blur(30px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--ease-out-expo);
+            z-index: 20;
+        }
+
+        .skill-item:hover .skill-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        .skill-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--glass-border);
+        }
+
+        .skill-tooltip h4 {
+            margin: 0 0 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .skill-level-bar {
+            background: var(--glass-primary);
+            border-radius: var(--radius-sm);
+            height: 6px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-sm);
+            transition: width 0.8s var(--ease-out-expo);
+        }
+
+        .skill-tooltip p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-categories {
+            padding: 6rem 0;
+            background: var(--glass-primary);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            padding: 2rem;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .category-header h3 {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .skill-item-detailed {
+            margin-bottom: 1rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-percentage {
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-size: 0.875rem;
+        }
+
+        .learning-path {
+            padding: 6rem 0;
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .learning-item {
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .learning-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .learning-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .learning-item h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .learning-item p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .learning-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .learning-progress .progress {
+            flex: 1;
+        }
+
+        .learning-progress span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+        }
+
+        .cta-content {
+            text-align: center;
+            padding: 4rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Skill ripple effect */
+        .skill-ripple {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: ripple 0.6s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+            50% {
+                transform: translateY(0) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-5px) rotate(-1deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skills-cloud {
+                min-height: 400px;
+                padding: 2rem 1rem;
+            }
+
+            .skill-item {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+            }
+
+            .skill-item.primary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-tooltip {
+                min-width: 180px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</body>
+</html>

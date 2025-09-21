@@ -1,0 +1,924 @@
+// ==================== PREMIUM PORTFOLIO INTERACTIVE FEATURES ====================
+
+class PortfolioApp {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupThemeToggle();
+    this.setupNavigation();
+    this.setupScrollReveal();
+    this.setupTypewriter();
+    this.setupRippleEffect();
+    this.setup3DTilt();
+    this.setupStatsCounter();
+    this.setupParallax();
+    this.setupLazyLoading();
+    this.setupSmoothScroll();
+    this.setupKeyboardNavigation();
+    this.setupProgressBars();
+    this.setupSkillsCloud();
+    this.setupProjectFilters();
+    this.setupContactForm();
+    this.setupDownloadResume();
+  }
+
+  // Enhanced Theme Toggle System
+  setupThemeToggle() {
+    const toggleBtn = document.querySelector('.theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    this.setTheme(currentTheme);
+    
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Add transition class
+        document.body.classList.add('theme-transitioning');
+        
+        // Animate theme toggle button
+        toggleBtn.style.transform = 'scale(0.8) rotate(180deg)';
+        
+        setTimeout(() => {
+          this.setTheme(newTheme);
+          localStorage.setItem('theme', newTheme);
+          
+          // Reset button animation
+          toggleBtn.style.transform = 'scale(1) rotate(0deg)';
+          
+          // Remove transition class
+          setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+          }, 300);
+        }, 150);
+      });
+    }
+  }
+
+  setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Update theme toggle icon
+    const themeToggle = document.querySelector('.theme-toggle i');
+    if (themeToggle) {
+      themeToggle.setAttribute('data-feather', theme === 'dark' ? 'sun' : 'moon');
+      if (window.feather) {
+        feather.replace();
+      }
+    }
+    
+    // Animate background elements
+    this.animateThemeElements(theme);
+  }
+
+  animateThemeElements(theme) {
+    const floatingElements = document.querySelectorAll('.floating-element');
+    const glassElements = document.querySelectorAll('.glass');
+    
+    floatingElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.transform = theme === 'light' 
+          ? 'translateY(-10px) rotate(5deg)' 
+          : 'translateY(0) rotate(0deg)';
+      }, index * 100);
+    });
+    
+    glassElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.boxShadow = theme === 'light'
+          ? '0 8px 32px rgba(31, 38, 135, 0.37)'
+          : '0 8px 32px rgba(0, 0, 0, 0.37)';
+      }, index * 50);
+    });
+  }
+
+  // Enhanced Navigation with Active States
+  setupNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage || (currentPage === 'index.html' && href === '/')) {
+        link.classList.add('active');
+      }
+      
+      link.addEventListener('click', (e) => {
+        // Smooth page transitions
+        if (href.includes('.html')) {
+          e.preventDefault();
+          this.smoothPageTransition(href);
+        }
+      });
+    });
+  }
+
+  // Smooth Page Transitions
+  smoothPageTransition(url) {
+    document.body.style.opacity = '0';
+    document.body.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+      window.location.href = url;
+    }, 300);
+  }
+
+  // Advanced Scroll Reveal with Stagger
+  setupScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('show');
+          }, index * 100); // Stagger animation
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  }
+
+  // Enhanced Typewriter with Multiple Phrases
+  setupTypewriter() {
+    const typewriterElements = document.querySelectorAll('.typewriter-text');
+    
+    typewriterElements.forEach(element => {
+      const phrases = element.dataset.phrases ? element.dataset.phrases.split(',') : [
+        'Full Stack Developer',
+        'Open Source Contributor',
+        'CKAD Certified',
+        'Cloud Architect',
+        'DevOps Engineer'
+      ];
+      
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      
+      const typeSpeed = 100;
+      const deleteSpeed = 50;
+      const pauseTime = 2000;
+      
+      const type = () => {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+          element.textContent = currentPhrase.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          element.textContent = currentPhrase.substring(0, charIndex + 1);
+          charIndex++;
+        }
+        
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          setTimeout(() => { isDeleting = true; }, pauseTime);
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+        
+        const speed = isDeleting ? deleteSpeed : typeSpeed;
+        setTimeout(type, speed);
+      };
+      
+      type();
+    });
+  }
+
+  // Advanced Ripple Effect
+  setupRippleEffect() {
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.btn, .card, .skill-item')) {
+        const element = e.target.closest('.btn, .card, .skill-item');
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        element.style.setProperty('--ripple-x', x + 'px');
+        element.style.setProperty('--ripple-y', y + 'px');
+        
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        
+        element.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      }
+    });
+  }
+
+  // 3D Tilt Effect for Cards
+  setup3DTilt() {
+    const tiltElements = document.querySelectorAll('.card-3d, .project-card, .skill-card');
+    
+    tiltElements.forEach(element => {
+      element.addEventListener('mousemove', (e) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        element.style.transform = `
+          perspective(1000px) 
+          rotateX(${rotateX}deg) 
+          rotateY(${rotateY}deg) 
+          translateZ(0)
+        `;
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+      });
+    });
+  }
+
+  // Enhanced Animated Stats Counter
+  setupStatsCounter() {
+    const counters = document.querySelectorAll('.counter');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.dataset.target);
+          const duration = parseInt(counter.dataset.duration) || 2000;
+          const suffix = counter.dataset.suffix || '';
+          
+          // Enhanced easing function for smoother animation
+          const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+          
+          let startTime = null;
+          
+          const animate = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Apply easing function
+            const easedProgress = easeOutCubic(progress);
+            const current = Math.floor(target * easedProgress);
+            
+            // Format number with comma separators and add suffix
+            counter.textContent = current.toLocaleString() + suffix;
+            
+            // Add visual feedback during counting
+            counter.style.transform = `scale(${1 + (easedProgress * 0.05)})`;
+            
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              // Reset scale and add completion pulse
+              counter.style.transform = 'scale(1)';
+              counter.classList.add('count-complete');
+              setTimeout(() => counter.classList.remove('count-complete'), 300);
+            }
+          };
+          
+          requestAnimationFrame(animate);
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => observer.observe(counter));
+  }
+
+  // Parallax Scrolling Effects
+  setupParallax() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    if (parallaxElements.length === 0) return;
+    
+    const handleScroll = () => {
+      const scrollY = window.pageYOffset;
+      
+      parallaxElements.forEach(element => {
+        const speed = element.dataset.speed || 0.5;
+        const yPos = -(scrollY * speed);
+        element.style.transform = `translateY(${yPos}px)`;
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  // Lazy Loading for Images
+  setupLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('loading');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    
+    images.forEach(img => {
+      img.classList.add('loading');
+      imageObserver.observe(img);
+    });
+  }
+
+  // Smooth Scroll Enhancement
+  setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  }
+
+  // Keyboard Navigation
+  setupKeyboardNavigation() {
+    document.addEventListener('keydown', (e) => {
+      // Tab navigation enhancement
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+      }
+      
+      // ESC key to close modals
+      if (e.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal.active');
+        modals.forEach(modal => modal.classList.remove('active'));
+      }
+    });
+    
+    document.addEventListener('mousedown', () => {
+      document.body.classList.remove('keyboard-navigation');
+    });
+  }
+
+  // Animated Progress Bars
+  setupProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const percentage = bar.dataset.percentage || '0';
+          
+          setTimeout(() => {
+            bar.style.width = percentage + '%';
+          }, 300);
+          
+          observer.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    progressBars.forEach(bar => observer.observe(bar));
+  }
+
+  // Interactive Skills Cloud
+  setupSkillsCloud() {
+    const skillsContainer = document.querySelector('.skills-cloud');
+    if (!skillsContainer) return;
+    
+    const skills = skillsContainer.querySelectorAll('.skill-item');
+    
+    skills.forEach((skill, index) => {
+      // Random float animation
+      skill.style.animationDelay = `${index * 0.1}s`;
+      skill.classList.add('float');
+      
+      // Hover interactions
+      skill.addEventListener('mouseenter', () => {
+        skill.style.transform = 'scale(1.1) translateY(-5px)';
+        skill.style.zIndex = '10';
+      });
+      
+      skill.addEventListener('mouseleave', () => {
+        skill.style.transform = '';
+        skill.style.zIndex = '';
+      });
+    });
+  }
+
+  // Project Filtering System
+  setupProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-item');
+    
+    if (filterBtns.length === 0) return;
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter projects
+        projects.forEach(project => {
+          const categories = project.dataset.categories.split(',');
+          
+          if (filter === 'all' || categories.includes(filter)) {
+            project.style.display = 'block';
+            project.style.animation = 'fadeInUp 0.5s ease forwards';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Enhanced Contact Form
+  setupContactForm() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+    
+    const inputs = form.querySelectorAll('input, textarea');
+    const submitBtn = form.querySelector('.submit-btn');
+    
+    // Input validation and styling
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', () => {
+        if (!input.value) {
+          input.parentElement.classList.remove('focused');
+        }
+        this.validateInput(input);
+      });
+      
+      input.addEventListener('input', () => {
+        this.validateInput(input);
+      });
+    });
+    
+    // Form submission
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      let isValid = true;
+      inputs.forEach(input => {
+        if (!this.validateInput(input)) {
+          isValid = false;
+        }
+      });
+      
+      if (isValid) {
+        this.submitForm(form, submitBtn);
+      }
+    });
+  }
+
+  validateInput(input) {
+    const value = input.value.trim();
+    const type = input.type;
+    let isValid = true;
+    
+    // Remove existing error
+    input.parentElement.classList.remove('error');
+    
+    // Validation rules
+    if (input.hasAttribute('required') && !value) {
+      isValid = false;
+    } else if (type === 'email' && value && !this.isValidEmail(value)) {
+      isValid = false;
+    }
+    
+    // Add error class if invalid
+    if (!isValid) {
+      input.parentElement.classList.add('error');
+    }
+    
+    return isValid;
+  }
+
+  isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  async submitForm(form, submitBtn) {
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Show success message
+      this.showNotification('Message sent successfully!', 'success');
+      form.reset();
+      
+    } catch (error) {
+      this.showNotification('Failed to send message. Please try again.', 'error');
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  }
+
+  // Download Resume Functionality - Links go directly to Google Drive
+  setupDownloadResume() {
+    // Resume download is now handled by direct links to Google Drive
+    // No JavaScript intervention needed - links work natively
+    console.log('Resume download links active - pointing to Google Drive');
+  }
+
+  // Resume download functionality removed - using direct Google Drive links
+  // All resume buttons now link directly to: https://drive.google.com/file/d/1Pi5TpYjHZKrwQGRTqLbt-xLkLgY-bA8m/view?usp=sharing
+    
+    // Convert HTML to PDF using browser's print functionality
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(resumeData);
+    printWindow.document.close();
+    
+    // Add print styles and trigger download
+    printWindow.onload = () => {
+      printWindow.print();
+      setTimeout(() => {
+        printWindow.close();
+      }, 100);
+    };
+    
+    // Show feedback
+    this.showNotification('Resume download started! Please check your Downloads folder.', 'success');
+  }
+
+  generateResumeHTML() {
+    return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Abhijit Das - Resume</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body { 
+                font-family: 'Inter', sans-serif; 
+                line-height: 1.6; 
+                color: #333; 
+                max-width: 800px; 
+                margin: 0 auto; 
+                padding: 20px;
+                background: white;
+            }
+            .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #8a2be2; padding-bottom: 20px; }
+            .header h1 { font-size: 2.5rem; color: #8a2be2; margin-bottom: 10px; }
+            .header p { font-size: 1.1rem; color: #666; }
+            .contact-info { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
+            .contact-info span { font-size: 0.9rem; color: #555; }
+            .section { margin-bottom: 25px; }
+            .section h2 { 
+                font-size: 1.3rem; 
+                color: #8a2be2; 
+                border-bottom: 1px solid #ddd; 
+                padding-bottom: 5px; 
+                margin-bottom: 15px; 
+            }
+            .experience-item, .education-item, .project-item { margin-bottom: 20px; }
+            .experience-item h3, .education-item h3, .project-item h3 { 
+                font-size: 1.1rem; 
+                color: #333; 
+                margin-bottom: 5px; 
+            }
+            .experience-item .company, .education-item .institution { 
+                font-weight: 600; 
+                color: #8a2be2; 
+                margin-bottom: 3px; 
+            }
+            .experience-item .duration, .education-item .duration { 
+                font-size: 0.9rem; 
+                color: #666; 
+                margin-bottom: 8px; 
+            }
+            .experience-item ul, .project-item ul { padding-left: 20px; }
+            .experience-item li, .project-item li { margin-bottom: 3px; font-size: 0.95rem; }
+            .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+            .skill-category h4 { color: #8a2be2; margin-bottom: 8px; }
+            .skill-category ul { list-style: none; padding: 0; }
+            .skill-category li { 
+                background: #f8f9fa; 
+                padding: 4px 8px; 
+                margin: 3px 0; 
+                border-radius: 4px; 
+                font-size: 0.9rem; 
+            }
+            .certifications-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+            .cert-item { 
+                background: #f8f9fa; 
+                padding: 10px; 
+                border-radius: 5px; 
+                border-left: 3px solid #8a2be2; 
+            }
+            .cert-item h4 { color: #333; margin-bottom: 3px; }
+            .cert-item .issuer { color: #8a2be2; font-size: 0.9rem; }
+            @media print {
+                body { margin: 0; padding: 15px; font-size: 12px; }
+                .header h1 { font-size: 2rem; }
+                .section h2 { font-size: 1.1rem; }
+                .section { page-break-inside: avoid; margin-bottom: 20px; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Abhijit Das</h1>
+            <p>Cloud-Native Engineer & Open Source Advocate</p>
+            <div class="contact-info">
+                <span>📧 appsonly310@gmail.com</span>
+                <span>🌐 github.com/Sukuna0007Abhi</span>
+                <span>💼 linkedin.com/in/abhijit-das-02098035b</span>
+                <span>📍 India (Remote Available)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>Cloud-native engineer and CKAD certified developer specializing in distributed systems, Kubernetes ecosystems, and developer experience. Experienced in Linux Foundation Mentorship programs and committed to building innovative solutions that advance the cloud-native community.</p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>JavaScript/TypeScript</li>
+                        <li>Python</li>
+                        <li>Go</li>
+                        <li>Rust</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Next.js</li>
+                        <li>Vue.js</li>
+                        <li>HTML5/CSS3</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>FastAPI</li>
+                        <li>GraphQL</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & DevOps</h4>
+                    <ul>
+                        <li>Kubernetes</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Oracle Cloud</li>
+                        <li>CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Open Source Developer</h3>
+                <div class="company">Linux Foundation (LFX) Mentorship Program</div>
+                <div class="duration">2024 - Present</div>
+                <ul>
+                    <li>Active participant in Linux Foundation Mentorship program contributing to cloud-native projects</li>
+                    <li>Collaborated with industry experts on cutting-edge distributed systems technologies</li>
+                    <li>Contributed to multiple open-source projects with 200+ commits across various repositories</li>
+                    <li>Focused on improving developer tooling and cloud-native application development</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Blockchain Developer</h3>
+                <div class="company">Pi Hackathon</div>
+                <div class="duration">2023</div>
+                <ul>
+                    <li>Selected as blockchain developer for Pi Hackathon working on innovative DeFi solutions</li>
+                    <li>Developed comprehensive lending protocol with smart contracts and governance mechanisms</li>
+                    <li>Implemented decentralized applications using modern Web3 technologies</li>
+                    <li>Collaborated with cross-functional teams to deliver production-ready blockchain solutions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Projects</h2>
+            <div class="project-item">
+                <h3>Distributed System Health Monitor</h3>
+                <ul>
+                    <li>Real-time monitoring solution for distributed microservices architectures</li>
+                    <li>Built with Go, Prometheus, and Grafana for comprehensive observability</li>
+                    <li>Implemented custom metrics collection and alerting mechanisms</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3>ML Platform Deployment System</h3>
+                <ul>
+                    <li>Kubernetes-native platform for deploying and managing ML workloads</li>
+                    <li>Integrated with MLflow for experiment tracking and model versioning</li>
+                    <li>Automated CI/CD pipelines for model deployment and monitoring</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3>RISC-V Decoder Generator</h3>
+                <ul>
+                    <li>Advanced tooling for RISC-V instruction set architecture</li>
+                    <li>Automated decoder generation with comprehensive test coverage</li>
+                    <li>Open-source contribution to RISC-V ecosystem development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="certifications-list">
+                <div class="cert-item">
+                    <h4>Certified Kubernetes Application Developer (CKAD)</h4>
+                    <div class="issuer">Cloud Native Computing Foundation</div>
+                </div>
+                <div class="cert-item">
+                    <h4>AWS Solutions Architect Associate</h4>
+                    <div class="issuer">Amazon Web Services</div>
+                </div>
+                <div class="cert-item">
+                    <h4>OCI Security Specialist</h4>
+                    <div class="issuer">Oracle Corporation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Computer Science Engineering</h3>
+                <div class="institution">Technology Institute</div>
+                <div class="duration">Ongoing</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Open Source Contributions</h2>
+            <ul>
+                <li><strong>Linux Foundation:</strong> Active contributor to cloud-native projects with focus on Kubernetes ecosystem</li>
+                <li><strong>Google Summer of Code:</strong> Contributed to major open-source projects in distributed systems</li>
+                <li><strong>GirlScript Summer of Code:</strong> Mentor and contributor helping newcomers enter open-source</li>
+                <li><strong>Community Impact:</strong> 750+ total commits across 20+ repositories with significant community engagement</li>
+            </ul>
+        </div>
+    </body>
+    </html>
+    `;
+  }
+
+  // Notification System
+  showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+      <div class="notification-content">
+        <span class="notification-message">${message}</span>
+        <button class="notification-close">&times;</button>
+      </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      notification.remove();
+    }, 5000);
+    
+    // Manual close
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+      notification.remove();
+    });
+  }
+
+  // Performance Monitoring
+  monitorPerformance() {
+    if ('performance' in window) {
+      window.addEventListener('load', () => {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+      });
+    }
+  }
+
+  // Error Handling
+  setupErrorHandling() {
+    window.addEventListener('error', (e) => {
+      console.error('JavaScript Error:', e.error);
+      // Could send error reports to analytics service
+    });
+  }
+}
+
+// Utility Functions
+class PortfolioUtils {
+  static debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  static throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function() {
+      const context = this;
+      const args = arguments;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function() {
+          if ((Date.now() - lastRan) >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
+      }
+    };
+  }
+
+  static isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  static getRandomFloat(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  static getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+}
+
+// Initialize Portfolio App
+document.addEventListener('DOMContentLoaded', () => {
+  new PortfolioApp();
+});
+
+// Page transition effect
+window.addEventListener('beforeunload', () => {
+  document.body.style.opacity = '0';
+  document.body.style.transform = 'translateY(-20px)';
+});
+
+// Export for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { PortfolioApp, PortfolioUtils };
+}

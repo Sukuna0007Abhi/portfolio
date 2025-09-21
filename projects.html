@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects Portfolio - Abhijit Das showcasing distributed systems, web scraping, RISC-V tooling, and blockchain development">
+    <title>Projects — Abhijit Das</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav glow-border">
+        <div class="nav-content">
+            <div class="nav-logo">Abhijit Das</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i data-feather="sun"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content reveal">
+                <h1 class="page-title color-shift">Projects Portfolio</h1>
+                <p class="page-subtitle">Showcasing my work in <span class="highlight-word">Go microservices</span>, <span class="highlight-word">Kubernetes orchestration</span>, and <span class="highlight-word">cloud-native solutions</span></p>
+                
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <div class="stat-number counter color-pulse" data-target="12">0</div>
+                        <div class="stat-label">Total Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number counter color-pulse" data-target="8">0</div>
+                        <div class="stat-label">Go Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number counter color-pulse" data-target="6">0</div>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number counter color-pulse" data-target="10">0</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Filters -->
+    <section class="project-filters">
+        <div class="container">
+            <div class="filter-controls reveal">
+                <h3>Filter by Category</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i data-feather="grid"></i>
+                        All Projects
+                    </button>
+                    <button class="filter-btn" data-filter="distributed-systems">
+                        <i data-feather="server"></i>
+                        Distributed Systems
+                    </button>
+                    <button class="filter-btn" data-filter="web-scraping">
+                        <i data-feather="globe"></i>
+                        Web Scraping
+                    </button>
+                    <button class="filter-btn" data-filter="tooling">
+                        <i data-feather="tool"></i>
+                        Developer Tools
+                    </button>
+                    <button class="filter-btn" data-filter="blockchain">
+                        <i data-feather="link"></i>
+                        Blockchain
+                    </button>
+                    <button class="filter-btn" data-filter="ml-ai">
+                        <i data-feather="brain"></i>
+                        ML & AI
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project">
+        <div class="container">
+            <div class="featured-content reveal">
+                <div class="featured-text">
+                    <div class="featured-badge">
+                        <span class="badge">Featured Project</span>
+                    </div>
+                    <h2>Distributed System Health Monitor</h2>
+                    <p class="featured-description">
+                        Enterprise-ready health monitoring solution with RATS-compliant attestation framework. 
+                        Features hardware-backed integrity checks, ML-powered anomaly detection, and multi-cloud deployment capabilities.
+                    </p>
+                    
+                    <div class="featured-highlights">
+                        <div class="highlight">
+                            <i data-feather="shield-check"></i>
+                            <span>RATS-Compliant Attestation</span>
+                        </div>
+                        <div class="highlight">
+                            <i data-feather="cpu"></i>
+                            <span>Hardware-Backed Security</span>
+                        </div>
+                        <div class="highlight">
+                            <i data-feather="trending-up"></i>
+                            <span>ML Anomaly Detection</span>
+                        </div>
+                        <div class="highlight">
+                            <i data-feather="cloud"></i>
+                            <span>Multi-Cloud Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-actions">
+                        <a href="https://github.com/Sukuna0007Abhi/Distributed-System-Health-Monitor.git" target="_blank" class="btn btn-primary">
+                            <i data-feather="github"></i>
+                            View on GitHub
+                        </a>
+                        <button class="btn btn-secondary" onclick="openProjectModal('distributed-monitor')">
+                            <i data-feather="info"></i>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="featured-visual">
+                    <div class="code-preview glow-border card-3d">
+                        <div class="code-header">
+                            <div class="code-controls">
+                                <span class="control control-red"></span>
+                                <span class="control control-yellow"></span>
+                                <span class="control control-green"></span>
+                            </div>
+                            <div class="code-title">health_monitor.go</div>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-go"><span class="comment">// Enterprise Health Monitor with RATS</span>
+<span class="keyword">package</span> main
+
+<span class="keyword">import</span> (
+    <span class="string">"context"</span>
+    <span class="string">"github.com/attestation/rats"</span>
+    <span class="string">"github.com/ml/anomaly"</span>
+)
+
+<span class="keyword">type</span> <span class="type">HealthMonitor</span> <span class="keyword">struct</span> {
+    attestor    *rats.<span class="type">Attestor</span>
+    detector    *anomaly.<span class="type">Detector</span>
+    cloudConfig *<span class="type">MultiCloudConfig</span>
+}
+
+<span class="keyword">func</span> (<span class="variable">h</span> *<span class="type">HealthMonitor</span>) <span class="function">StartMonitoring</span>() {
+    <span class="comment">// Hardware attestation</span>
+    <span class="variable">h</span>.attestor.<span class="function">ValidateIntegrity</span>()
+    
+    <span class="comment">// ML-powered anomaly detection</span>
+    <span class="keyword">go</span> <span class="variable">h</span>.detector.<span class="function">Monitor</span>()
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Distributed System Health Monitor -->
+                <article class="project-card card-3d" data-categories="distributed-systems,ml-ai" data-project="distributed-monitor">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sukuna0007Abhi/Distributed-System-Health-Monitor.git" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('distributed-monitor')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('distributed-monitor')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">Distributed Systems</div>
+                        <div class="project-status">Active</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Distributed System Health Monitor</h3>
+                        <p>Enterprise-grade health monitoring with RATS-compliant attestation framework and ML-powered anomaly detection for multi-cloud environments.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="star"></i>
+                                <span>Featured</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>5.2K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="users"></i>
+                                <span>Team Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Go</span>
+                            <span class="badge badge-secondary">Kubernetes</span>
+                            <span class="badge badge-accent">RATS</span>
+                            <span class="badge badge-special">ML</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Web Scraper with Sentiment Analysis -->
+                <article class="project-card card-3d" data-categories="web-scraping,ml-ai" data-project="web-scraper">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sukuna0007Abhi/Web-Scrapper-with-sentiment-analysis.git" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('web-scraper')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('web-scraper')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">Web Scraping</div>
+                        <div class="project-status">Complete</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Web Scraper with Sentiment Analysis</h3>
+                        <p>Advanced web scraping tool combined with NLP sentiment analysis to measure public opinion and market trends from various data sources.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="trending-up"></i>
+                                <span>High Impact</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>3.8K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="user"></i>
+                                <span>Solo Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-secondary">NLP</span>
+                            <span class="badge badge-accent">BeautifulSoup</span>
+                            <span class="badge badge-special">ML</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- RISC-V Instruction Decoder Generator -->
+                <article class="project-card card-3d" data-categories="tooling" data-project="risc-v-decoder">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sukuna0007Abhi/RISC-V-Instruction-Decoder-Generator-.git" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('risc-v-decoder')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('risc-v-decoder')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">Developer Tools</div>
+                        <div class="project-status">Complete</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>RISC-V Instruction Decoder Generator</h3>
+                        <p>Automated decoder generation tool from RISC-V YAML specifications to accelerate ISA tooling development and verification workflows.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="zap"></i>
+                                <span>Innovative</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>2.1K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="user"></i>
+                                <span>Solo Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-secondary">Ruby</span>
+                            <span class="badge badge-accent">RISC-V</span>
+                            <span class="badge badge-special">Tooling</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cloud Infrastructure Automation -->
+                <article class="project-card card-3d" data-categories="distributed-systems" data-project="cloud-automation">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('cloud-automation')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('cloud-automation')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">Cloud Infrastructure</div>
+                        <div class="project-status">In Progress</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multi-Cloud Infrastructure Automation</h3>
+                        <p>Terraform-based infrastructure automation across AWS, OCI, and other cloud providers with compliance and security best practices.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="shield"></i>
+                                <span>Enterprise</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>4.5K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="users"></i>
+                                <span>Team Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Terraform</span>
+                            <span class="badge badge-secondary">AWS</span>
+                            <span class="badge badge-accent">OCI</span>
+                            <span class="badge badge-special">Kubernetes</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blockchain DeFi Protocol -->
+                <article class="project-card card-3d" data-categories="blockchain" data-project="defi-protocol">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('defi-protocol')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('defi-protocol')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">Blockchain</div>
+                        <div class="project-status">Hackathon</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>DeFi Lending Protocol</h3>
+                        <p>Decentralized lending protocol built for Pi Hackathon with smart contracts, yield farming, and governance token mechanisms.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="award"></i>
+                                <span>Hackathon</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>1.8K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="users"></i>
+                                <span>Team Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Solidity</span>
+                            <span class="badge badge-secondary">Web3</span>
+                            <span class="badge badge-accent">DeFi</span>
+                            <span class="badge badge-special">Smart Contracts</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ML Model Deployment Platform -->
+                <article class="project-card card-3d" data-categories="ml-ai,distributed-systems" data-project="ml-platform">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('ml-platform')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('ml-platform')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">ML Platform</div>
+                        <div class="project-status">In Progress</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>ML Model Deployment Platform</h3>
+                        <p>Kubernetes-native platform for deploying, scaling, and monitoring machine learning models with automated CI/CD pipelines.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="cpu"></i>
+                                <span>MLOps</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>6.2K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="user"></i>
+                                <span>Solo Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-secondary">Kubernetes</span>
+                            <span class="badge badge-accent">MLOps</span>
+                            <span class="badge badge-special">Docker</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- API Gateway & Microservices -->
+                <article class="project-card card-3d" data-categories="distributed-systems" data-project="api-gateway">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('api-gateway')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('api-gateway')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">Microservices</div>
+                        <div class="project-status">Complete</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>API Gateway & Microservices Suite</h3>
+                        <p>High-performance API gateway with rate limiting, authentication, and observability for microservices architecture.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="zap"></i>
+                                <span>High Performance</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>7.1K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="user"></i>
+                                <span>Solo Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Go</span>
+                            <span class="badge badge-secondary">gRPC</span>
+                            <span class="badge badge-accent">Redis</span>
+                            <span class="badge badge-special">Docker</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Developer CLI Tools -->
+                <article class="project-card card-3d" data-categories="tooling" data-project="cli-tools">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                                    <i data-feather="github"></i>
+                                </a>
+                                <button class="project-link" onclick="openProjectModal('cli-tools')" aria-label="View Details">
+                                    <i data-feather="info"></i>
+                                </button>
+                                <button class="project-link" onclick="openProjectDemo('cli-tools')" aria-label="Live Demo">
+                                    <i data-feather="external-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-type">CLI Tools</div>
+                        <div class="project-status">Active</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Developer Productivity CLI Suite</h3>
+                        <p>Collection of command-line tools for developer productivity including code generators, project scaffolding, and automation utilities.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i data-feather="tool"></i>
+                                <span>Productivity</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="code"></i>
+                                <span>3.9K LOC</span>
+                            </div>
+                            <div class="metric">
+                                <i data-feather="user"></i>
+                                <span>Solo Project</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge badge-primary">Go</span>
+                            <span class="badge badge-secondary">CLI</span>
+                            <span class="badge badge-accent">Automation</span>
+                            <span class="badge badge-special">Open Source</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Details</h2>
+                <button class="modal-close" onclick="closeProjectModal()" aria-label="Close">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content glass glow-border reveal">
+                <h2>Interested in Collaborating?</h2>
+                <p>I'm always open to discussing new projects, innovative ideas, and opportunities to contribute to meaningful solutions.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i data-feather="message-circle"></i>
+                        Start a Conversation
+                    </a>
+                    <a href="https://github.com/Sukuna0007Abhi" target="_blank" class="btn btn-secondary">
+                        <i data-feather="github"></i>
+                        View GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content reveal">
+                <div class="footer-left">
+                    <div class="footer-logo">Abhijit Das</div>
+                    <p>Cloud-Native Engineer & Open Source Advocate</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/Sukuna0007Abhi" target="_blank" aria-label="GitHub">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhijit-das-02098035b" target="_blank" aria-label="LinkedIn">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="mailto:appsonly310@gmail.com" aria-label="Email">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="skills.html">Skills</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="achievements.html">Achievements</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Pi5TpYjHZKrwQGRTqLbt-xLkLgY-bA8m/view?usp=sharing" target="_blank" class="download-resume">Resume</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijit Das. Built with passion for open source and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/main.js"></script>
+    <script>
+        feather.replace();
+        
+        // Project Modal System
+        const projectDetails = {
+            'distributed-monitor': {
+                title: 'Distributed System Health Monitor',
+                description: 'Enterprise-ready health monitoring solution with RATS-compliant attestation framework and ML-powered anomaly detection.',
+                longDescription: `
+                    <p>This project represents a comprehensive approach to distributed system monitoring with enterprise-grade security and reliability features. The system implements the RATS (Remote Attestation Procedures) framework to ensure hardware-backed integrity verification.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>RATS-Compliant Attestation:</strong> Hardware-backed trust verification for all system components</li>
+                        <li><strong>ML Anomaly Detection:</strong> Machine learning algorithms to identify unusual system behavior patterns</li>
+                        <li><strong>Multi-Cloud Support:</strong> Deployment across AWS, OCI, and other cloud providers</li>
+                        <li><strong>Real-time Monitoring:</strong> Live dashboards and alerting systems</li>
+                        <li><strong>Scalable Architecture:</strong> Kubernetes-native design for horizontal scaling</li>
+                    </ul>
+                    
+                    <h4>Technical Implementation:</h4>
+                    <p>Built with Go for performance-critical components, the system uses gRPC for inter-service communication and implements custom Kubernetes operators for seamless deployment management.</p>
+                `,
+                technologies: ['Go', 'Kubernetes', 'RATS', 'gRPC', 'Prometheus', 'Grafana', 'ML'],
+                github: 'https://github.com/Sukuna0007Abhi/Distributed-System-Health-Monitor.git',
+                status: 'Active Development'
+            },
+            'web-scraper': {
+                title: 'Web Scraper with Sentiment Analysis',
+                description: 'Advanced web scraping tool combined with NLP sentiment analysis for market research and opinion monitoring.',
+                longDescription: `
+                    <p>A sophisticated web scraping and analysis platform that combines data extraction capabilities with natural language processing to provide insights into public sentiment and market trends.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Multi-Source Scraping:</strong> Extract data from news sites, social media, and forums</li>
+                        <li><strong>Sentiment Analysis:</strong> Advanced NLP algorithms for emotion and opinion detection</li>
+                        <li><strong>Trend Monitoring:</strong> Track sentiment changes over time</li>
+                        <li><strong>Data Visualization:</strong> Interactive charts and dashboards</li>
+                        <li><strong>API Integration:</strong> RESTful API for third-party integrations</li>
+                    </ul>
+                    
+                    <h4>Use Cases:</h4>
+                    <p>Market research, brand monitoring, political sentiment tracking, and social media analysis for businesses and researchers.</p>
+                `,
+                technologies: ['Python', 'BeautifulSoup', 'NLTK', 'Scrapy', 'Flask', 'PostgreSQL', 'Redis'],
+                github: 'https://github.com/Sukuna0007Abhi/Web-Scrapper-with-sentiment-analysis.git',
+                status: 'Complete'
+            },
+            'risc-v-decoder': {
+                title: 'RISC-V Instruction Decoder Generator',
+                description: 'Automated tool for generating instruction decoders from RISC-V YAML specifications.',
+                longDescription: `
+                    <p>This innovative tool automates the generation of instruction decoders for RISC-V processors, significantly reducing development time for ISA tooling and verification workflows.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>YAML-Based Configuration:</strong> Standard RISC-V instruction specification format</li>
+                        <li><strong>Multi-Language Output:</strong> Generate decoders in C, Python, and Verilog</li>
+                        <li><strong>Extensible Architecture:</strong> Support for custom instruction extensions</li>
+                        <li><strong>Verification Tools:</strong> Built-in testing and validation frameworks</li>
+                        <li><strong>Performance Optimization:</strong> Generated code is optimized for speed and size</li>
+                    </ul>
+                    
+                    <h4>Impact:</h4>
+                    <p>Accelerates RISC-V processor development by automating tedious decoder generation tasks, enabling faster iteration and reduced errors.</p>
+                `,
+                technologies: ['Python', 'Ruby', 'YAML', 'RISC-V', 'Code Generation', 'Testing'],
+                github: 'https://github.com/Sukuna0007Abhi/RISC-V-Instruction-Decoder-Generator-.git',
+                status: 'Complete'
+            }
+        };
+        
+        function openProjectModal(projectId) {
+            const project = projectDetails[projectId];
+            if (!project) return;
+            
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = project.title;
+            modalBody.innerHTML = `
+                <div class="project-modal-content">
+                    <div class="project-description">
+                        ${project.longDescription}
+                    </div>
+                    
+                    <div class="project-technologies">
+                        <h4>Technologies Used:</h4>
+                        <div class="tech-tags">
+                            ${project.technologies.map(tech => `<span class="badge">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="${project.github}" target="_blank" class="btn btn-primary">
+                            <i data-feather="github"></i>
+                            View Source Code
+                        </a>
+                        <div class="project-status-badge">
+                            <i data-feather="activity"></i>
+                            Status: ${project.status}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Re-render feather icons in modal
+            feather.replace();
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function openProjectDemo(projectId) {
+            // Placeholder for demo functionality
+            alert('Demo functionality would open here for ' + projectId);
+        }
+        
+        // Enhanced filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter projects with animation
+                    projectCards.forEach((card, index) => {
+                        const categories = card.dataset.categories;
+                        const shouldShow = filter === 'all' || categories.includes(filter);
+                        
+                        if (shouldShow) {
+                            setTimeout(() => {
+                                card.style.display = 'block';
+                                card.style.animation = 'fadeInUp 0.5s ease forwards';
+                            }, index * 100);
+                        } else {
+                            card.style.animation = 'fadeOut 0.3s ease forwards';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(ellipse 600px 400px at 50% 0%, rgba(124, 58, 237, 0.06), transparent);
+        }
+
+        .page-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .project-filters {
+            padding: 2rem 0;
+            background: var(--glass-primary);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .filter-controls {
+            text-align: center;
+        }
+
+        .filter-controls h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .filter-btn:hover {
+            background: var(--glass-strong);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .featured-project {
+            padding: 6rem 0;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .featured-badge {
+            margin-bottom: 1rem;
+        }
+
+        .featured-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .featured-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .featured-highlights {
+            margin-bottom: 2rem;
+        }
+
+        .highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .highlight i {
+            color: var(--accent-primary);
+        }
+
+        .featured-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .code-preview {
+            background: var(--glass-primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--glass-secondary);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .code-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .control-red { background: #ef4444; }
+        .control-yellow { background: #f59e0b; }
+        .control-green { background: #10b981; }
+
+        .code-title {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .code-content {
+            padding: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .code-content pre {
+            margin: 0;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Syntax highlighting */
+        .keyword { color: #7c3aed; font-weight: bold; }
+        .string { color: #06d6a0; }
+        .comment { color: var(--text-muted); font-style: italic; }
+        .function { color: #06b6d4; font-weight: bold; }
+        .type { color: #f97316; }
+        .variable { color: var(--text-primary); }
+
+        .projects-section {
+            padding: 6rem 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--glass-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.3s var(--ease-out-expo);
+            backdrop-filter: blur(20px);
+        }
+
+        .project-card:hover {
+            background: var(--glass-secondary);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .project-image {
+            height: 200px;
+            background: var(--gradient-secondary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            width: 48px;
+            height: 48px;
+            background: var(--glass-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            background: var(--gradient-primary);
+            transform: scale(1.1);
+        }
+
+        .project-type {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--glass-strong);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+        }
+
+        .project-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-quaternary);
+            color: var(--bg-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .metric i {
+            color: var(--accent-primary);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge-primary { background: var(--gradient-primary); color: white; }
+        .badge-secondary { background: var(--gradient-secondary); color: white; }
+        .badge-accent { background: var(--accent-tertiary); color: white; }
+        .badge-special { background: var(--accent-quaternary); color: var(--bg-primary); }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 800px;
+            max-height: 80vh;
+            margin: 2rem;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--glass-strong);
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .project-modal-content h4 {
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .project-modal-content ul {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-modal-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .project-technologies {
+            margin: 2rem 0;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .project-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .project-status-badge i {
+            color: var(--accent-quaternary);
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+        }
+
+        .cta-content {
+            text-align: center;
+            padding: 4rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-stats {
+                gap: 1.5rem;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .modal-content {
+                margin: 1rem;
+                max-height: 90vh;
+            }
+
+            .modal-header,
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</body>
+</html>
