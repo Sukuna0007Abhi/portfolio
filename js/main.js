@@ -1,5 +1,11 @@
 // ==================== PREMIUM PORTFOLIO INTERACTIVE FEATURES ====================
 
+// Set dark theme immediately to prevent flash
+(function() {
+  const theme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+
 class PortfolioApp {
   constructor() {
     this.init();

@@ -1,7 +1,9 @@
 /* ==================== PREMIUM DARK GLASSMORPHISM PORTFOLIO ==================== */
 
 /* Root Variables & Theme System */
-:root {
+:root,
+html:not([data-theme]),
+html[data-theme="dark"] {
   /* Dark Theme Colors */
   --bg-primary: #0a0f1c;
   --bg-secondary: #0f1419;
