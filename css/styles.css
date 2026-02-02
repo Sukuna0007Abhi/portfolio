@@ -319,9 +319,9 @@ a {
   background-size: 400% 400%;
   border-radius: inherit;
   z-index: -1;
-  opacity: 0.8;
-  animation: infiniteGlow 8s linear infinite, glowPulse 3s ease-in-out infinite alternate;
-  filter: blur(4px);
+  opacity: 0.3;
+  animation: infiniteGlow 15s linear infinite, glowPulse 3s ease-in-out infinite alternate;
+  filter: blur(2px);
 }
 
 .glow-border::after {
